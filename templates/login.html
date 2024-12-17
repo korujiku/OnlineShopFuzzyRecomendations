@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Login - My Online Store{% endblock %}
+
+{% block content %}
+<h1 class="text-center mb-4">Login to Your Account</h1>
+
+<form method="POST" action="{{ url_for('login') }}">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        <label class="form-label">Email address</label>
+        {{ form.email(class="form-control") }}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        {{ form.password(class="form-control") }}
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+{% endblock %}

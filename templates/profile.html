@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile - My Online Store{% endblock %}
+
+{% block content %}
+<h1 class="text-center mb-4">Welcome, {{ current_user.nickname }}!</h1>
+
+<h3>Your Recommendations</h3>
+<ul>
+    {% for recommendation in recommendations %}
+    <li>{{ recommendation }}</li>
+    {% else %}
+    <li>No recommendations available.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
